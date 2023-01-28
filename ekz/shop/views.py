@@ -5,6 +5,7 @@ from django.views import generic
 from django.views.generic.base import TemplateView
 from django.contrib.auth.views import LoginView
 
+from .forms import Registration
 from .models import Product, User
 from django.views.generic.edit import CreateView
 
@@ -20,7 +21,7 @@ class Products(generic.ListView):
 
 
 class RegisterUser(generic.CreateView):
-    # form_class = Registration
+    form_class = Registration
     template_name = 'registration.html'
     success_url = reverse_lazy('login')
     success_page = 'registration'

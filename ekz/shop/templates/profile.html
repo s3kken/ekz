@@ -1,9 +1,9 @@
-{% extends 'base_template.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
   <div>
       <img src="{{ user.avatar.url }}">
-        <p>{{ user.login }}</p>
+        <p>{{ user.username }}</p>
       <div>
             {% for i in products %}
                 {{ i.name }}<br>
