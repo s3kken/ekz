@@ -1,0 +1,13 @@
+{% extends base.html %}
+
+{% block content %}
+
+<h3>Каталог</h3>
+
+{% for i in products %}
+{{ i.name }}<br>
+<a href="{% url 'product' %}">Подробная информация о товаре</a>
+<img src="{{ i.image.url }}"><br>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>Описание фирмы</p><br>
+
+{% for i in products %}
+{{ i.name }}<br>
+<img src="{{ i.image.url }}"><br>
+{% endfor %}
+
+{% endblock %}
