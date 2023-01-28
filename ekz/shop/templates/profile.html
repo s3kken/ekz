@@ -3,8 +3,13 @@
 {% block content %}
   <div>
       <img src="{{ user.avatar.url }}">
+        <p>{{ user.login }}</p>
       <div>
-
+            {% for i in products %}
+                {{ i.name }}<br>
+                <a href="{% url 'product' %}">Подробная информация о товаре</a>
+                <img src="{{ i.image.url }}"><br>
+            {% endfor %}
       </div>
   </div>
 {% endblock %}
