@@ -41,13 +41,12 @@ class DetailView(LoginRequiredMixin, generic.DetailView):
     template_name = 'product.html'
 
 
-
 def create_order(request):
     if request.method == 'POST':
         form = Products(request.POST, request.FILES)
         if form.is_valid():
             stock = form.save(comit=False)
-            stock.name = request.user
+            stock.orderer = request.user
             stock.save()
             form.save_m2m()
             return redirect('profile')
