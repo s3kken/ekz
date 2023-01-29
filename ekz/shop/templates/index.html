@@ -3,10 +3,12 @@
 {% block content %}
 
 <p>Описание фирмы</p><br>
-
-{% for i in products %}
-{{ i.name }}<br>
-<img src="{{ i.image.url }}"><br>
-{% endfor %}
-
+{% if product_list %}
+    {% for product in product_list %}
+        {{ product.name }}<br>
+        <img src="{{ product.image.url }}"><br>
+    {% endfor %}
+{% else %}
+    <p> нет товаров</p>
+{% endif %}
 {% endblock %}

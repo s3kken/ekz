@@ -11,6 +11,7 @@ from django.views.generic.edit import CreateView
 
 
 class Index(TemplateView):
+    model = Product
     template_name = 'index.html'
 
 
