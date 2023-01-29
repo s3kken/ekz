@@ -10,7 +10,7 @@ from .models import Product, User
 from django.views.generic.edit import CreateView
 
 
-class Index(TemplateView):
+class Index(generic.ListView):
     model = Product
     template_name = 'index.html'
 
