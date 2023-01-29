@@ -2,12 +2,11 @@
 
 {% block content %}
 
-{% for i in products %}
-{{ i.name }}<br>
-{{ i.description }}<br>
-<img src="{{ i.image.url }}"><br>
-{% endfor %}
-
+<div>
+    {{ product.name }}<br>
+    {{ product.description }}<br>
+    <img src="{{ product.image.url }}"><br>
+</div>
 <a href="{% url 'order' %}">Заказать</a>
 
 {% endblock %}

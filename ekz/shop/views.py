@@ -39,5 +39,8 @@ class DetailView(LoginRequiredMixin, generic.DetailView):
     template_name = 'product.html'
 
 
-class Order(TemplateView):
+class Order(CreateView):
+    form_class = Products
+    model = Product
     template_name = 'order.html'
+    success_url = reverse_lazy('profile.html')
