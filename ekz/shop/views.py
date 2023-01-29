@@ -41,12 +41,6 @@ class DetailView(LoginRequiredMixin, generic.DetailView):
     template_name = 'product.html'
 
 
-class Order(generic.CreateView):
-    form_class = Products
-    model = Product
-    template_name = 'order.html'
-    success_url = reverse_lazy('profile.html')
-
 
 def create_order(request):
     if request.method == 'POST':
@@ -56,7 +50,7 @@ def create_order(request):
             stock.name = request.user
             stock.save()
             form.save_m2m()
-            return redirect('profile.html')
+            return redirect('profile')
     else:
         form = Products()
     return render(request, 'order.html', {'form': form})
