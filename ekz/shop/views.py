@@ -1,5 +1,6 @@
 from msilib.schema import ListView
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic.base import TemplateView
@@ -33,7 +34,7 @@ class Profile(generic.ListView):
     template_name = 'profile.html'
 
 
-class DetailView(generic.DetailView):
+class DetailView(LoginRequiredMixin, generic.DetailView):
     model = Product
     template_name = 'product.html'
 
