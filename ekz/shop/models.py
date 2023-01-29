@@ -1,8 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+
 class User(AbstractUser):
-    avatar = models.ImageField(blank=False, upload_to="images/avatar", verbose_name="avatar")
+    avatar = models.ImageField(blank=False, upload_to="media", verbose_name="avatar")
+
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
